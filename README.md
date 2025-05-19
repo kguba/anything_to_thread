@@ -83,19 +83,12 @@ streamlit run main.py
 - Automatic session expiration
 - Secure password field for API key input
 
-## ⚠️ Limitations
-
-- Maximum 5 requests per user
-- Requires YouTube videos with available captions
-- OpenAI API key required for usage
-- API key needs to be re-entered after session expiration
-
 ## 🛠️ Technical Stack
 
 - Python 3.9+
 - Streamlit
 - LangChain
-- OpenAI GPT-4
+- OpenAI GPT-4o-mini
 - YouTube Transcript API
 
 ## 📝 License
@@ -118,6 +111,6 @@ For any questions or suggestions, feel free to open an issue or reach out to me 
 
 ## 🙏 Acknowledgments
 
-- OpenAI for providing the GPT-4 API
+- OpenAI for providing the API
 - Streamlit for the amazing web framework
 - All contributors and users of this project
