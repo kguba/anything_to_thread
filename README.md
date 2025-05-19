@@ -12,6 +12,7 @@ Convert YouTube videos into engaging Twitter/X threads with AI. This tool automa
 - 🎯 Smart request limiting system
 - 🎨 Clean and intuitive user interface
 - 📱 Responsive tweet display with automatic height adjustment
+- 📺 Live YouTube video preview under the URL field (with automatic dark mode support)
 
 ## 🚀 Live Demo
 
@@ -68,6 +69,7 @@ streamlit run main.py
    - The URL must be a valid YouTube video
    - The video must have captions available
    - The URL should be in the format: `https://www.youtube.com/watch?v=...` or `https://youtu.be/...`
+   - **New:** As soon as you enter a valid URL, a small video preview appears below the input field. The preview adapts to light/dark mode automatically.
 
 5. Select your preferred language:
    - 🇺🇸 English
