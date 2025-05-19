@@ -49,6 +49,30 @@ st.divider()
 video_url = st.text_input("Enter YouTube Video URL:").strip()
 st.write("")
 
+# Video-Preview anzeigen, wenn eine URL eingegeben wurde
+if video_url and (video_url.startswith("https://www.youtube.com/") or video_url.startswith("https://youtu.be/")):
+    with st.container():
+        video_id = video_url.split("v=")[-1] if "v=" in video_url else video_url.split("/")[-1]
+        st.markdown(
+            f"""
+            <style>
+            .yt-preview-bg {{
+                background-color: #F0F2F6;
+            }}
+            @media (prefers-color-scheme: dark) {{
+                .yt-preview-bg {{
+                    background-color: #23272F !important;
+                }}
+            }}
+            </style>
+            <div class="yt-preview-bg" style="padding: 12px 12px 8px 12px; border-radius: 8px; display: flex; justify-content: center;">
+                <iframe width="340" height="190" src="https://www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    st.write("")  # Mehr Abstand
+
 # API Key Handling
 if not st.secrets["openai_api_key"]:
     openai_key_input = st.text_input("Enter Your OpenAI Key:", type="password")
