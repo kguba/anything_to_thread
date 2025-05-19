@@ -122,14 +122,35 @@ if submit_button and video_url:
         # Load Transcript
         with st.spinner("Loading video transcript..."):
             try:
-                loader = YoutubeLoader.from_youtube_url(
-                    video_url,
-                    language=["en", "en-US", "de", "de-DE", "es", "es-ES"]
-                )
-                transcript = loader.load()
+                # First validate if the video exists and has captions
+                video_id = None
+                if "youtube.com/watch?v=" in video_url:
+                    video_id = video_url.split("watch?v=")[1].split("&")[0]
+                elif "youtu.be/" in video_url:
+                    video_id = video_url.split("youtu.be/")[1].split("?")[0]
+                
+                if not video_id:
+                    st.error("Invalid YouTube URL format")
+                    st.stop()
+                
+                # Try to load transcript with multiple language attempts
+                transcript = None
+                languages = ["en", "en-US", "de", "de-DE", "es", "es-ES"]
+                
+                for lang in languages:
+                    try:
+                        loader = YoutubeLoader.from_youtube_url(
+                            video_url,
+                            language=[lang]
+                        )
+                        transcript = loader.load()
+                        if transcript:
+                            break
+                    except Exception:
+                        continue
                 
                 if not transcript:
-                    st.error("Could not load transcript. The video might not have captions available.")
+                    st.error("Could not load transcript. The video might not have captions available in any of the supported languages.")
                     st.stop()
                     
             except Exception as e:
