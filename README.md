@@ -6,13 +6,10 @@ Convert YouTube videos into engaging Twitter/X threads with AI. This tool automa
 
 - 🎥 Convert YouTube videos to Twitter/X threads
 - 🌍 Support for multiple languages (English, German, Spanish)
-- 🤖 Powered by GPT-4 for high-quality content
+- 🤖 Powered by GPT-4o-mini for high-quality content
 - 📝 Automatic thread structuring and formatting
 - 🔒 Secure API key handling with session-based storage
-- 🎯 Smart request limiting system
 - 🎨 Clean and intuitive user interface
-- 📱 Responsive tweet display with automatic height adjustment
-- 📺 Live YouTube video preview under the URL field (with automatic dark mode support)
 
 ## 🛠️ Installation
 
@@ -65,7 +62,6 @@ streamlit run main.py
    - The URL must be a valid YouTube video
    - The video must have captions available
    - The URL should be in the format: `https://www.youtube.com/watch?v=...` or `https://youtu.be/...`
-   - **New:** As soon as you enter a valid URL, a small video preview appears below the input field. The preview adapts to light/dark mode automatically.
 
 5. Select your preferred language:
    - 🇺🇸 English
@@ -81,7 +77,6 @@ streamlit run main.py
 - Input validation and sanitization
 - No sensitive data is logged
 - Automatic session expiration
-- Secure password field for API key input
 
 ## 🛠️ Technical Stack
 
@@ -101,7 +96,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## ☕ Support
 
-If you find this tool helpful, consider buying me a coffee:
+If you find this tool helpful, feel free to consider buying me AI Tokens 🦙:
 
 [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/kguba)
 
