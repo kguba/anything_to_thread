@@ -14,10 +14,6 @@ Convert YouTube videos into engaging Twitter/X threads with AI. This tool automa
 - 📱 Responsive tweet display with automatic height adjustment
 - 📺 Live YouTube video preview under the URL field (with automatic dark mode support)
 
-## 🚀 Live Demo
-
-Try it out: [Anything To Thread](https://anything-to-thread.streamlit.app)
-
 ## 🛠️ Installation
 
 1. Clone the repository:
